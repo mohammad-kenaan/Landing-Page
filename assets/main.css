@@ -65,6 +65,7 @@ header nav menu a{
   flex: 1 1 auto;
   color: var(--color-white);
   padding-right: 30px;
+  margin-bottom: 15px;
 }
 .sec-0 .hero-main-text h1 {
   color: var(--color-white);
