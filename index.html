@@ -10,7 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&display=swap"
     rel="stylesheet">
-  
+
   <link rel="stylesheet" href="./assets/reset.css">
   <link rel="stylesheet" href="./assets/main.css">
   <title>Landing page</title>
@@ -18,27 +18,28 @@
 
 <body>
 
-  <header>
+  <header class="page-header">
     <div class="container">
       <div class="logo">
         <img src="./assets/img/logo-h50.png" alt="">
       </div>
       <nav>
         <menu>
-          <li><a href="#our-product">Our Product</a></li>
-          <li><a href="#quote">Quote</a></li>
-          <li><a href="#call-to-action">Call to Action</a></li>
+          <li><a href="#our-product">Our Products</a></li>
+          <li><a href="#testimonial">Quote</a></li>
+          <li><a href="#cta">Sign up</a></li>
         </menu>
       </nav>
     </div>
   </header>
   <main>
-    <section class="sec-0">
+    <section class="main-sec sec-hero">
       <div class="container">
         <div class="hero-main-text">
           <h1>At Odin, we believe sound is power</h1>
           <p>It’s the most powerful force on earth.
-            We’re music fanatics and audio engineers. We’re music fanatics. We’re explorers and dreamers, passionate down
+            We’re music fanatics and audio engineers. We’re music fanatics. We’re explorers and dreamers, passionate
+            down
             to our bones about making whatever you’re listening to a little more magical.
           </p>
           <a href="#">Sign up</a>
@@ -49,56 +50,60 @@
       </div>
     </section>
 
-    <section class="sec-1" id="our-product">
+    <section class="main-sec sec-products" id="our-product">
       <div class="container">
-        <h2>What's hot.</h2>
-        <div class="sub-section-1">
-          <article>
-              <img src="./assets/img/headphone-w168*112.webp" alt="">
+        <h2>What's Hot</h2>
+        <div class="products-list">
+          <article class="product-item">
+            <img src="./assets/img/headphone-w168*112.webp" alt="">
             <p>Black Wireless Headphones on White Surface</p>
           </article>
-          <article>
-              <img src="./assets/img/jacko-w168-168.webp" alt="">
+          <article class="product-item">
+            <img src="./assets/img/jacko-w168-168.webp" alt="">
             <p>Modern headphones with box placed on black surface</p>
           </article>
-          <article>
-              <img src="./assets/img/pisound-w168*168.webp" alt="">
+          <article class="product-item">
+            <img src="./assets/img/pisound-w168*168.webp" alt="">
             <p>Music relax concept, Headphone on dark texture background </p>
           </article>
-          <article>
-              <img src="./assets/img/piza-w168*168.webp" alt="">         
+          <article class="product-item">
+            <img src="./assets/img/piza-w168*168.webp" alt="">
             <p>Closeup headphones on white background. over light</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="sec-2" id="quote">
+    <section  class="main-sec sec-testimonial" id="testimonial">
       <div class="container">
-        <blockquote >
-            <p>One "feature" that I've found on some gaming headsets is the ability to hear yourself speaking in the
-              speakers real-time. This helps you communicate.
-            </p>
-           <cite>-Eyad, God of tree</cite>
+        <blockquote>
+          <p>One "feature" that I've found on some gaming headsets is the ability to hear yourself speaking in the
+            speakers real-time. This helps you communicate.
+          </p>
+          <cite>-Eyad, God of Tree</cite>
         </blockquote>
       </div>
     </section>
 
-    <section class="sec-3" id="call-to-action">
-      <div class="container">
-        <div class="sub-section-3">
-          <h3>Call to action! it's time!</h3>
-          <p>Sign up for our product by clicking that button right over there!</p>
-        </div>
-        <a href="#">Sign up</a>
-    </section>
+    <section class="main-sec sec-cta" id="cta">
 
+      <div class="container">
+        <div class="cta-wrapper">
+          <div class="cta-content">
+            <h3>Call to action! It's time!</h3>
+            <p>Sign up for our product by clicking that button right over there!</p>
+          </div>
+          <a href="#">Sign up</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="page-footer">
     <div class="container">
-      <p class="copy-right">Copyright © The Landing Page 2024.</p>
+      <p class="copyright">Copyright © The Landing Page 2024</p>
     </div>
   </footer>
 </body>
+
 </html>

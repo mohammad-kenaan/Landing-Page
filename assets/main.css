@@ -1,33 +1,44 @@
-html { 
-  --color-primary: #1f2937;    /* Hero and Footer background, quote text */
-  --color-secondary: #e5e7eb; /* Hero-text, Quote background */
-  --color-white: #f9faf8; /* logo-text, hero text */
-  --color-text: #4b5563;   /* body text in general */
-  --color-accent: #3882f6;  /* btn  */
+html {
+  --color-primary: #1f2937;
+  --color-secondary: #e5e7eb;
+  --color-offwhite: #f9faf8;
+  --color-text: #4b5563;
+  --color-accent: #3882f6;
   font-size: 0.625em;
-    
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   font-size: 1.6rem;
   color: var(--color-text);
-  font-family:"Roboto", Arial, Helvetica, sans-serif; 
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   background-color: var(--color-primary);
 }
 
-header, footer, section {
+.page-header,
+.page-footer,
+.main-sec {
   padding: 0 16px;
 }
+
 .container {
   max-width: 1024px;
   margin: 0 auto;
 }
 
-header {
-  height: 70px;
 
+/* Page Header */
+.page-header {
+  height: 70px;
   background-color: var(--color-primary);
 }
-header .container {
+
+.page-header .container {
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -35,11 +46,12 @@ header .container {
   height: 100%;
   padding: 10px 0;
 }
-header .logo {
+
+.page-header .logo {
   width: 160px;
 }
 
-header nav menu {
+.page-header nav menu {
   display: flex;
   gap: 5px 14px;
   color: var(--color-secondary);
@@ -47,39 +59,46 @@ header nav menu {
   text-wrap: nowrap;
   margin-right: -6px;
 }
-header nav menu a{
+
+.page-header nav menu a {
   padding: 6px;
 }
 
-.sec-0 {
+
+/* Hero Section */
+.sec-hero {
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--color-offwhite);
 }
-.sec-0 .container{
+
+.sec-hero .container {
   display: flex;
   flex-wrap: wrap;
   padding: 100px 0;
 }
 
-.sec-0 .hero-main-text {
+.sec-hero .hero-main-text {
   width: 340px;
   flex: 1 1 auto;
   padding-right: 30px;
   margin-bottom: 15px;
 }
-.sec-0 .hero-main-text h1 {
-  color: var(--color-white);
+
+.sec-hero .hero-main-text h1 {
+  color: var(--color-offwhite);
   font-weight: 900;
   font-size: 4.8rem;
   line-height: 1.15;
   text-wrap: balance;
 }
-.sec-0 .hero-main-text p {
+
+.sec-hero .hero-main-text p {
   font-size: 1.8rem;
   color: var(--color-secondary);
   margin-bottom: 12px;
 }
-.sec-0 .hero-main-text a {
+
+.sec-hero .hero-main-text a {
   background-color: var(--color-accent);
   padding: .5em 2em;
   margin-bottom: 15px;
@@ -88,61 +107,74 @@ header nav menu a{
   font-size: 1.8rem;
   display: inline-block;
 }
-.sec-0 .hero-img {
+
+.sec-hero .hero-img {
   width: 340px;
   flex: 1 1 auto;
 }
 
-.sec-1 {
-  background-color: var(--color-white);
+
+/* Products Section */
+.sec-products {
+  background-color: white;
 }
-.sec-1 .container {
+
+.sec-products .container {
   padding: 75px 0 100px;
 }
-.sec-1 h2 {
+
+.sec-products h2 {
   text-align: center;
   font-size: 3.6rem;
   color: var(--color-primary);
   font-weight: 900;
   margin-bottom: 1.5em;
 }
-.sec-1 .sub-section-1 {
+
+.sec-products .products-list {
   --total-width: 820px;
   --gap: 50px;
   --items-per-row: 4;
-  --total-gap: calc( var(--gap) * (var(--items-per-row) - 1) );
-  --net-width: calc(var(--total-width) - var(--total-gap) ); 
-  --item-width: calc(var(--net-width) * 0.25);
-
+  --total-gap: calc(var(--gap) * (var(--items-per-row) - 1));
+  --net-width: calc(var(--total-width) - var(--total-gap));
+  max-width: var(--total-width);
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: var(--gap);
 }
-.sub-section-1 article {
-  width: var(--item-width) ; 
+
+.sec-products .product-item {
+  width: calc(var(--net-width) / var(--items-per-row));
 }
-.sec-1 article img {
+
+.sec-products .product-item img {
   border: 4px solid var(--color-accent);
   border-radius: 16px;
   width: 100%;
 }
-.sec-1 p {
+
+.sec-products p {
   margin-top: 12px;
   text-align: center;
   font-size: 1.6rem;
   line-height: 1.2em;
 }
 
-.sec-2 {
-  background-color: var(--color-secondary);  
+
+/* Testimonial Section */
+.sec-testimonial {
+  background-color: var(--color-secondary);
 }
-.sec-2 .container {
+
+.sec-testimonial .container {
   padding: 90px 0 52px;
   display: flex;
   justify-content: center;
 }
-.sec-2 blockquote {
+
+.sec-testimonial blockquote {
   font-size: 3.6rem;
   width: 800px;
   padding: 30px;
@@ -151,58 +183,72 @@ header nav menu a{
   font-weight: 300;
   font-style: italic;
 }
-blockquote cite {
-  margin-top: -9px;
+
+.sec-testimonial blockquote cite {
   display: block;
   text-align: right;
   font-size: 2.3rem;
   font-weight: 700;
   font-style: normal;
+  margin-right: 30px;
 }
 
-.sec-3 {
-  background-color: var(--color-white);
-  padding: 94px 5px;
+
+/* CTA Section */
+.sec-cta {
+  background-color: white;
 }
-.sec-3 .container {
+
+.sec-cta .container {
+  padding: 95px 0;
+}
+
+.sec-cta .cta-wrapper {
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
   flex-wrap: wrap;
   background-color: var(--color-accent);
   padding: 38px;
-  margin: 0 auto;
   border-radius: 10px;
-  color: var(--color-white);
+  color: var(--color-offwhite);
 }
-.sec-3 .sub-section-3 h3 {
+
+.sec-cta .cta-content h3 {
   font-size: 2.4rem;
   font-weight: 700;
   text-wrap: balance;
 }
-.sub-section-3 p {
+
+.sec-cta .cta-content p {
   font-size: 1.6rem;
 }
-.sec-3 a {
+
+.sec-cta a {
   font-size: 1.6rem;
-  border: 2px solid var(--color-white);
-  padding: 0.2em 2em;
+  border: 2px solid var(--color-offwhite);
+  padding: 0.4em 2em;
   border-radius: 7px;
   font-weight: 700;
   align-self: flex-end;
-  margin-bottom: 0.9em;
+  margin-bottom: 0.4em;
 }
 
-footer {
-  text-align: center;
-  color: var(--color-white);
+
+/* Page Footer */
+.page-footer {
+  background-color: var(--color-primary);
+  color: var(--color-offwhite);
+}
+
+.page-footer .container {
+  padding: 40px 0;
+}
+
+.page-footer .copyright {
   font-size: 1.8rem;
-  padding: 16px;
-
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    scroll-behavior: smooth;
-  }
-} 
+
+
