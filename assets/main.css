@@ -1,23 +1,21 @@
 html { 
-  font-size: calc(1rem * 0.625);
   --color-primary: #1f2937;    /* Hero and Footer background, quote text */
   --color-secondary: #e5e7eb; /* Hero-text, Quote background */
   --color-white: #f9faf8; /* logo-text, hero text */
   --color-text: #4b5563;   /* body text in general */
   --color-accent: #3882f6;  /* btn  */
-  font-size: calc(1em * 0.625);
-  scroll-behavior: smooth;
+  font-size: 0.625em;
+    
 }
-
 body {
   font-size: 1.6rem;
   color: var(--color-text);
   font-family:"Roboto", Arial, Helvetica, sans-serif; 
   background-color: var(--color-primary);
-  
 }
-section, footer {
-  padding: 16px;
+
+header, footer, section {
+  padding: 0 16px;
 }
 .container {
   max-width: 1024px;
@@ -26,19 +24,18 @@ section, footer {
 
 header {
   height: 70px;
-  padding: 10px 16px;
 
+  background-color: var(--color-primary);
 }
 header .container {
   display: flex;
   justify-content: space-between;
-
   gap: 16px;
   align-items: center;
   height: 100%;
+  padding: 10px 0;
 }
 header .logo {
-  color: var(--color-white);
   width: 160px;
 }
 
@@ -54,16 +51,19 @@ header nav menu a{
   padding: 6px;
 }
 
+.sec-0 {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
 .sec-0 .container{
   display: flex;
   flex-wrap: wrap;
-  padding: 38px 0;
+  padding: 100px 0;
 }
 
 .sec-0 .hero-main-text {
   width: 340px;
   flex: 1 1 auto;
-  color: var(--color-white);
   padding-right: 30px;
   margin-bottom: 15px;
 }
@@ -71,7 +71,7 @@ header nav menu a{
   color: var(--color-white);
   font-weight: 900;
   font-size: 4.8rem;
-  line-height: 1.15em;
+  line-height: 1.15;
   text-wrap: balance;
 }
 .sec-0 .hero-main-text p {
@@ -81,21 +81,22 @@ header nav menu a{
 }
 .sec-0 .hero-main-text a {
   background-color: var(--color-accent);
-  padding: 5px 35px;
+  padding: .5em 2em;
   margin-bottom: 15px;
-  border-radius: 10px;
+  border-radius: 7px;
   font-weight: 700;
   font-size: 1.8rem;
+  display: inline-block;
 }
 .sec-0 .hero-img {
   width: 340px;
   flex: 1 1 auto;
-  margin-bottom: 50px;
 }
-
 
 .sec-1 {
   background-color: var(--color-white);
+}
+.sec-1 .container {
   padding: 75px 0 100px;
 }
 .sec-1 h2 {
@@ -106,20 +107,25 @@ header nav menu a{
   margin-bottom: 1.5em;
 }
 .sec-1 .sub-section-1 {
+  --total-width: 820px;
+  --gap: 50px;
+  --items-per-row: 4;
+  --total-gap: calc( var(--gap) * (var(--items-per-row) - 1) );
+  --net-width: calc(var(--total-width) - var(--total-gap) ); 
+  --item-width: calc(var(--net-width) * 0.25);
+
   display: flex;
   justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: var(--gap);
 }
 .sub-section-1 article {
-  width: 178px;
-  padding: 5px;
+  width: var(--item-width) ; 
 }
-.sec-1 .illustration {
+.sec-1 article img {
   border: 4px solid var(--color-accent);
-  border-radius: 18px;
-  height: 168px;
-  overflow: hidden;
+  border-radius: 16px;
+  width: 100%;
 }
 .sec-1 p {
   margin-top: 12px;
@@ -128,12 +134,11 @@ header nav menu a{
   line-height: 1.2em;
 }
 
-
 .sec-2 {
   background-color: var(--color-secondary);  
-  padding: 90px 0 52px;
 }
 .sec-2 .container {
+  padding: 90px 0 52px;
   display: flex;
   justify-content: center;
 }
@@ -141,7 +146,7 @@ header nav menu a{
   font-size: 3.6rem;
   width: 800px;
   padding: 30px;
-  line-height: 1.1em;
+  line-height: 1.22em;
   color: var(--color-primary);
   font-weight: 300;
   font-style: italic;
@@ -192,10 +197,9 @@ footer {
   text-align: center;
   color: var(--color-white);
   font-size: 1.8rem;
-  padding: 1.5em;
+  padding: 16px;
 
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
